@@ -10,7 +10,26 @@
      /* in px root font size is always 10 (even if user change it in browser) */
      /* get percentage 10/16px */
      //defines what 1rem is
-     font-size: 62.5%;
+     //1rem = 10px
+     font-size: 62.5%;     
+     
+
+     //last one who satisfies the rule will be applied
+     @include respond(big-desktop) { //1rem = 12px, 12/16 = 75%
+         font-size: 75%;
+     }
+
+     @include respond(tab-land) { //1rem = 9px, 9/16 = 56.25%
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port) { //1rem = 8px, 8/16 = 50%
+        font-size: 50%;
+    }
+
+    @include respond(phone) { //1rem = 7px, 7/16 = 43.75%
+        font-size: 43.75%;
+    }
  }
  
  body {
