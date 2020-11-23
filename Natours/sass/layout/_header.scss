@@ -6,7 +6,7 @@
         rgba($color-primary-light, 0.8),
         rgba($color-primary-dark, 0.8)
         ), 
-        url("../img/hero.jpg");
+        url("../img/hero-small.jpg");
     background-size: cover;
 
     /* starting position of image - where image wont be cropped when resizing */
@@ -15,6 +15,17 @@
     /* from top left clockwise */
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+           only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+           only screen and (min-width: 125em) {
+      background-image: linear-gradient(
+         to right bottom, 
+         rgba($color-primary-light, 0.8),
+         rgba($color-primary-dark, 0.8)
+         ), 
+         url("../img/hero.jpg");
+    }
 
     @include respond(tab-port) {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
