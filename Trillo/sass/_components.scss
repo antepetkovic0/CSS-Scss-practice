@@ -83,8 +83,8 @@
     }
 
     &__icon {
-        height: 3rem;
-        width: 3rem;
+        height: 2.25rem;
+        width: 2.25rem;
         fill: var(--color-grey-dark-2);
     }
 
@@ -96,7 +96,7 @@
         background-color: var(--color-primary);
         position: absolute;
         top: 1rem;
-        left: 2.5rem;
+        left: 2rem;
 
         //flex also works for text
         display: flex;
@@ -181,4 +181,184 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2rem;
+}
+
+//////////////////gallery//////////////////
+.gallery {
+    display: flex;
+
+    &__photo {
+        width: 100%;
+        //with inline not fitting - white line
+        display: block;
+    }
+}
+
+//////////////////overview//////////////////
+.overview {
+    border-bottom: var(--line);
+    display: flex;
+    align-items: center;
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+    }
+
+    &__stars {
+        //flex: 1;
+        //occupying all the remaining space -> instead use margin: auto
+        //it occupies only space how much it need
+        margin-right: auto;
+
+        //not 100% vertically aligned so we use
+        display: flex;
+    }
+
+    &__location {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: var(--color-primary);
+    }
+
+    &__icon-location {
+        margin-right: .5rem;
+    }
+
+    &__rating {
+        background-color: var(--color-primary);
+        color: white;
+        margin-left: 3rem;
+        align-self: stretch;
+        padding: .5rem 2rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__rating-average {
+        font-size: 2.25rem;
+        font-weight: 300;
+    }
+
+    &__rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+}
+
+//////////////////button inline//////////////////
+.btn-inline {
+    border: none;
+    background-color: transparent;
+    color: var(--color-primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        color: var(--color-grey-dark-1);
+    }
+
+    &:focus {
+        outline: none;
+        animation: puls 1s infinite;
+    }
+}
+
+@keyframes puls {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: rgba(0, 0, 0, 0.15);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+//////////////////paragraph//////////////////
+.paragraph:not(:last-of-type) {
+    margin-bottom: 2rem;
+} 
+
+//////////////////list//////////////////
+.list {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+    }
+
+    &__item::before {
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .5rem;
+
+        //older browsers
+        //background-image: url(../img/chevron-thin-right.svg);
+        //background-size: cover;
+
+        //newer browsers - masks
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+    }
+}
+
+//////////////////recommend//////////////////
+.recommend {
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+
+    display: flex;
+    align-items: center;
+
+    &__count {
+        margin-right: auto;
+    }
+
+    &__photo {
+        //to not include border in photo width
+        box-sizing: content-box;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+
+        &:not(:last-child) {
+            margin-right: -1.5rem;
+        }
+    }
 }
