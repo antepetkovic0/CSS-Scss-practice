@@ -47,6 +47,12 @@ $bp-large: 68.75em;
 //900px - put side nav to the top
 $bp-medium: 56.25em;
 
+//600px - make 2 rows instead columns
+$bp-small: 37.5em;
+
+//500px - put search bar below
+$bp-smallest: 31.25em;
+
 
 * {
     margin: 0;
