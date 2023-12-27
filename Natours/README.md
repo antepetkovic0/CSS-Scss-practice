@@ -1,7 +1,5 @@
-# How to start
+## How to start
 
-- `npm i -g live-server`
-- `cd Natours`
 - `npm i`
 - `npm start` or `npm run build`
 
