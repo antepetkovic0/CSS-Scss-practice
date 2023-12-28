@@ -16,6 +16,6 @@ Project consists of 3 separate projects: Natours, Trillo and Nexter
 
 ## Before starting
 
-Be sure you installed `live-server` package globally.
+Be sure you installed `live-server` package globally
 
 `npm install -g live-server`
