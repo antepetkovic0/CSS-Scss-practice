@@ -1,6 +1,6 @@
 ## Project structure
 
-Project consists of 3 separate projects: Natours, Trillo and Nexter
+Repository consists of 3 separate projects: Natours, Trillo and Nexter
 
 **Natours**
 
